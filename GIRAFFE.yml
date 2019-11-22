@@ -1,0 +1,5 @@
+tools:
+  porcupine:
+    grammars: []
+    files: [GIRAFFE/porcupipeline.pork]
+    nodes: []
