@@ -1,9 +1,432 @@
 {
-  "links": [],
-  "nodes": [],
+  "links": [
+    {
+      "id": "6bbf5f43-36e8-40ea-a94b-dead0306fd17",
+      "from": "a8d85016-699e-47c0-887e-661ec189e21d",
+      "to": "cca5dbd3-e318-4653-8d13-ea6a8d6bd108"
+    },
+    {
+      "id": "253de6b6-9a4b-445c-8633-c7f1b10ee874",
+      "from": "d88abd9d-17f3-42a9-b84e-de6694917dd0",
+      "to": "74ce9a50-b91e-45c6-a881-7dc97fab2e56"
+    },
+    {
+      "id": "07287754-d088-4126-ab80-1185d679605b",
+      "from": "c931c469-af0e-4f20-83d0-d977f5895414",
+      "to": "49f41e28-7ad0-4204-875f-4c54bed31b44"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "b1a26fae-3f16-44fb-a2e8-2f7d25678075",
+      "name": "io_select_files",
+      "class": "io.SelectFiles",
+      "ports": [
+        {
+          "base": "base_directory",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "base_directory"
+              }
+            }
+          ],
+          "editable": true,
+          "id": "96f1f908-94c2-4067-9f2c-b768ac12afda",
+          "input": true,
+          "inputPort": "9a465dfe-3aef-4bd7-be42-4b92f5907a17",
+          "name": "base_directory",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "T1",
+          "editable": true,
+          "id": "3c519aa0-a77d-4db2-83d5-688cc129057b",
+          "input": true,
+          "inputPort": "2572ecd2-155d-4c29-b4a7-0c874bb95a02",
+          "name": "T1",
+          "output": true,
+          "outputPort": "a8d85016-699e-47c0-887e-661ec189e21d",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "sub_id",
+          "editable": true,
+          "id": "ef9887d3-44ab-4bd6-a605-adf6bdf1b14c",
+          "input": true,
+          "inputPort": "513cc4a0-46aa-4a86-a3ad-75b38b42e718",
+          "name": "sub_id",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "fs_sub_id",
+          "editable": true,
+          "id": "79c04bef-9d3b-42de-b21a-a3095a8b8def",
+          "input": false,
+          "inputPort": false,
+          "name": "fs_sub_id",
+          "output": true,
+          "outputPort": "d88abd9d-17f3-42a9-b84e-de6694917dd0",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        146.1875,
+        152.546875
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Flexibly collect data from disk to feed into workflows.",
+          "argument": {
+            "name": "io.SelectFiles()",
+            "import": "import nipype.interfaces.io as io"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "name": "io"
+          }
+        }
+      ],
+      "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/nipype.interfaces.io.html#selectfiles",
+      "colour": "#fe334e"
+    },
+    {
+      "id": "9c9f206b-1c57-4f94-b64f-bae6507f1807",
+      "name": "freesurfer_recon_all",
+      "class": "freesurfer.ReconAll",
+      "ports": [
+        {
+          "base": "subject_id",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "subject_id"
+              }
+            }
+          ],
+          "editable": false,
+          "id": "3426a549-987e-4e20-b84c-195d2b2c70f4",
+          "input": true,
+          "inputPort": "74ce9a50-b91e-45c6-a881-7dc97fab2e56",
+          "name": "subject_id",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "directive",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "directive"
+              }
+            }
+          ],
+          "editable": true,
+          "id": "1e96b08e-2204-47a1-a603-766b5acbaf52",
+          "input": true,
+          "inputPort": "25e96b07-1ade-4596-a9a4-89f426c61ce9",
+          "name": "directive",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "T1_files",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "T1_files"
+              }
+            }
+          ],
+          "editable": false,
+          "id": "16131171-55d1-4b44-a356-dc47d653e975",
+          "input": true,
+          "inputPort": "cca5dbd3-e318-4653-8d13-ea6a8d6bd108",
+          "name": "T1_files",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_dir",
+          "editable": true,
+          "id": "d1558eb5-0b70-479e-8d04-6e890f1d79d4",
+          "input": false,
+          "inputPort": false,
+          "name": "out_dir",
+          "output": true,
+          "outputPort": "c931c469-af0e-4f20-83d0-d977f5895414",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        473.1875,
+        115.15625
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Wraps the executable command ``recon-all``.",
+          "argument": {
+            "name": "freesurfer.ReconAll()",
+            "import": "import nipype.interfaces.freesurfer as freesurfer"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "name": "freesurfer"
+          }
+        }
+      ],
+      "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.freesurfer/preprocess.html#reconall",
+      "colour": "#fa5f25"
+    },
+    {
+      "id": "928a55a3-5fee-422a-ba3c-00cf300cca63",
+      "name": "io_data_sink",
+      "class": "io.DataSink",
+      "ports": [
+        {
+          "base": "base_directory",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "base_directory"
+              }
+            }
+          ],
+          "editable": true,
+          "id": "8bf45c60-a06c-4cb1-b5ce-f2851c66dea4",
+          "input": true,
+          "inputPort": "18acace2-567b-4b80-8b11-d6e027b00270",
+          "name": "base_directory",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "parameterization",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "parameterization"
+              }
+            }
+          ],
+          "editable": true,
+          "id": "1c846900-efc5-4d4e-861a-295835785542",
+          "input": true,
+          "inputPort": "8e8c5ea7-12c8-4aa0-84bb-f2ebf4d97d0d",
+          "name": "parameterization",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "_outputs",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "_outputs"
+              }
+            }
+          ],
+          "editable": true,
+          "id": "bb003ca6-5f36-415d-a6f4-7fa4940e95ce",
+          "input": true,
+          "inputPort": "7f4373f6-8774-4192-8990-ea47b5f23b10",
+          "name": "_outputs",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "remove_dest_dir",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "remove_dest_dir"
+              }
+            }
+          ],
+          "editable": true,
+          "id": "4ca81220-f972-478b-86f7-5ff9c904b34d",
+          "input": true,
+          "inputPort": "12ecd61b-3ec9-453d-88e3-833d56b2c709",
+          "name": "remove_dest_dir",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "creds_path",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "creds_path"
+              }
+            }
+          ],
+          "editable": true,
+          "id": "d641187c-fea4-4ae5-b664-6bcea16f6a35",
+          "input": true,
+          "inputPort": "a2117d05-db91-4202-b313-2faeb65b5cfc",
+          "name": "creds_path",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "encrypt_bucket_keys",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "encrypt_bucket_keys"
+              }
+            }
+          ],
+          "editable": true,
+          "id": "80b657bf-ebc7-4866-a40d-8035addd1495",
+          "input": true,
+          "inputPort": "41105380-19c6-4b07-be0c-af4569994be0",
+          "name": "encrypt_bucket_keys",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "bucket",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "bucket"
+              }
+            }
+          ],
+          "editable": true,
+          "id": "df191347-8373-4d5a-b070-92a53c2af224",
+          "input": true,
+          "inputPort": "1d556f8f-d576-4a39-86e4-7f53680f00c1",
+          "name": "bucket",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "local_copy",
+          "code": [
+            {
+              "language": "Nipype",
+              "argument": {
+                "name": "local_copy"
+              }
+            }
+          ],
+          "editable": true,
+          "id": "28025c1b-bc0d-4c81-9ea5-f608e72ca314",
+          "input": true,
+          "inputPort": "a5743a6a-8eb9-478d-b8db-4c0f0dc2e980",
+          "name": "local_copy",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "recon_results",
+          "editable": false,
+          "id": "1d9abdb0-7116-4cec-bb0d-500c1f8cd30d",
+          "input": true,
+          "inputPort": "49f41e28-7ad0-4204-875f-4c54bed31b44",
+          "name": "recon_results",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        894.1875,
+        294.546875
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Generic datasink module to store structured outputs",
+          "argument": {
+            "name": "io.DataSink()",
+            "import": "import nipype.interfaces.io as io"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "name": "io"
+          }
+        }
+      ],
+      "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/nipype.interfaces.io.html#datasink",
+      "colour": "#fe334e"
+    }
+  ],
   "stickies": [],
   "ui": {
-    "showToolboxes": []
+    "showToolboxes": [
+      "Nipype"
+    ]
   },
   "version": "v1"
 }
