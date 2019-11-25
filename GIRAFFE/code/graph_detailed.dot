@@ -1,7 +1,6 @@
 digraph structs {
 node [shape=record];
-MyWorkflowio_select_files [label="{IN}|{ io_select_files | io |  }|{OUT|<outT1> T1|<outsubid> sub_id}"];
-MyWorkflowfreesurfer_recon_all [label="{IN|<inT1files> T1_files|<insubjectid> subject_id}|{ freesurfer_recon_all | freesurfer |  }|{OUT}"];
-MyWorkflowio_select_files:outT1:e -> MyWorkflowfreesurfer_recon_all:inT1files:w;
-MyWorkflowio_select_files:outsubid:e -> MyWorkflowfreesurfer_recon_all:insubjectid:w;
+MyWorkflowNodeName_1fc3610 [label="{IN}|{ NodeName_1fc3610 | io |  }|{OUT|<outT1> T1}"];
+MyWorkflowfreesurfer_recon_all [label="{IN|<inT1files> T1_files}|{ freesurfer_recon_all | freesurfer |  }|{OUT}"];
+MyWorkflowNodeName_1fc3610:outT1:e -> MyWorkflowfreesurfer_recon_all:inT1files:w;
 }

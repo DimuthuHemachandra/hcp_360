@@ -42,9 +42,9 @@ else:
     sub_ids = [subject_dir.split("-")[-1] for subject_dir in subject_dirs]
 
 #Flexibly collect data from disk to feed into workflows.
-io_select_files = pe.Node(io.SelectFiles(templates={'T1':'sub-{sub_id}/anat/sub-{sub_id}_T1w.nii.gz'}), name = 'io_select_files')
-io_select_files.inputs.base_directory = bids_dir
-io_select_files.iterables = [('sub_id', sub_ids)]
+NodeHash_1fc3610 = pe.Node(io.SelectFiles(templates={'T1':'{sub_id}/anat/{sub_id}_T1w.nii.gz'}), name = 'NodeName_1fc3610')
+NodeHash_1fc3610.inputs.base_directory = bids_dir
+NodeHash_1fc3610.iterables = [('sub_id', sub_ids)]
 
 #Wraps the executable command ``recon-all``.
 freesurfer_recon_all = pe.Node(interface = freesurfer.ReconAll(), name='freesurfer_recon_all')
@@ -57,8 +57,8 @@ io_data_sink.inputs.parameterization = True
 
 #Create a workflow to connect all those nodes
 analysisflow = nipype.Workflow('MyWorkflow')
-analysisflow.connect(io_select_files, "T1", freesurfer_recon_all, "T1_files")
-analysisflow.connect(io_select_files, "sub_id", freesurfer_recon_all, "subject_id")
+analysisflow.connect(NodeHash_1fc3610, "T1", freesurfer_recon_all, "T1_files")
+#analysisflow.connect(NodeHash_1fc3610, "sub_id", freesurfer_recon_all, "subject_id")
 #analysisflow.connect(freesurfer_recon_all, "out_dir", io_data_sink, "recon_results")
 
 #Run the workflow

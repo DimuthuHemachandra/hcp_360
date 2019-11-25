@@ -1,0 +1,30 @@
+[
+    {
+        "group": 1,
+        "imports": [],
+        "name": "0_NodeName_1fc3610",
+        "size": 1
+    },
+    {
+        "group": 1,
+        "imports": [
+            "0_NodeName_1fc3610"
+        ],
+        "name": "1_freesurfer_recon_all",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [],
+        "name": "2_NodeName_1fc3610",
+        "size": 1
+    },
+    {
+        "group": 2,
+        "imports": [
+            "2_NodeName_1fc3610"
+        ],
+        "name": "3_freesurfer_recon_all",
+        "size": 1
+    }
+]

@@ -1,0 +1,59 @@
+{
+    "groups": [
+        {
+            "name": "Group_00001",
+            "procs": [
+                0,
+                1
+            ],
+            "total": 2
+        },
+        {
+            "name": "Group_00002",
+            "procs": [
+                2,
+                3
+            ],
+            "total": 2
+        }
+    ],
+    "links": [
+        {
+            "source": 0,
+            "target": 1,
+            "value": 1
+        },
+        {
+            "source": 2,
+            "target": 3,
+            "value": 1
+        }
+    ],
+    "maxN": 2,
+    "nodes": [
+        {
+            "group": 1,
+            "name": "0_NodeName_1fc3610",
+            "report": "/private/var/folders/xj/hrv7cw_107z11314zr3544fh0000gn/T/tmpsn6hgiqv/MyWorkflow/_sub_id_sub-01/NodeName_1fc3610/_report/report.rst",
+            "result": "/private/var/folders/xj/hrv7cw_107z11314zr3544fh0000gn/T/tmpsn6hgiqv/MyWorkflow/_sub_id_sub-01/NodeName_1fc3610/result_NodeName_1fc3610.pklz"
+        },
+        {
+            "group": 1,
+            "name": "1_freesurfer_recon_all",
+            "report": "/private/var/folders/xj/hrv7cw_107z11314zr3544fh0000gn/T/tmpj_23n00d/MyWorkflow/_sub_id_sub-01/freesurfer_recon_all/_report/report.rst",
+            "result": "/private/var/folders/xj/hrv7cw_107z11314zr3544fh0000gn/T/tmpj_23n00d/MyWorkflow/_sub_id_sub-01/freesurfer_recon_all/result_freesurfer_recon_all.pklz"
+        },
+        {
+            "group": 2,
+            "name": "2_NodeName_1fc3610",
+            "report": "/private/var/folders/xj/hrv7cw_107z11314zr3544fh0000gn/T/tmpo1p2pm1j/MyWorkflow/_sub_id_sub-02/NodeName_1fc3610/_report/report.rst",
+            "result": "/private/var/folders/xj/hrv7cw_107z11314zr3544fh0000gn/T/tmpo1p2pm1j/MyWorkflow/_sub_id_sub-02/NodeName_1fc3610/result_NodeName_1fc3610.pklz"
+        },
+        {
+            "group": 2,
+            "name": "3_freesurfer_recon_all",
+            "report": "/private/var/folders/xj/hrv7cw_107z11314zr3544fh0000gn/T/tmphh0d5vtd/MyWorkflow/_sub_id_sub-02/freesurfer_recon_all/_report/report.rst",
+            "result": "/private/var/folders/xj/hrv7cw_107z11314zr3544fh0000gn/T/tmphh0d5vtd/MyWorkflow/_sub_id_sub-02/freesurfer_recon_all/result_freesurfer_recon_all.pklz"
+        }
+    ]
+}
