@@ -1,5 +1,0 @@
-strict digraph  {
-"MyWorkflow.NodeName_1fc3610.SelectFiles.io";
-"MyWorkflow.freesurfer_recon_all.ReconAll.freesurfer";
-"MyWorkflow.NodeName_1fc3610.SelectFiles.io" -> "MyWorkflow.freesurfer_recon_all.ReconAll.freesurfer";
-}
