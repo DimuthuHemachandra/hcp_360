@@ -10,7 +10,7 @@
         "imports": [
             "0_NodeName_1fc3610"
         ],
-        "name": "1_freesurfer_recon_all",
+        "name": "1_hcppaths",
         "size": 1
     }
 ]

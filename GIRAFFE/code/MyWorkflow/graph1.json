@@ -21,14 +21,14 @@
         {
             "group": 1,
             "name": "0_NodeName_1fc3610",
-            "report": "/tmp/tmpitc7iqky/MyWorkflow/_sub_id_01/NodeName_1fc3610/_report/report.rst",
-            "result": "/tmp/tmpitc7iqky/MyWorkflow/_sub_id_01/NodeName_1fc3610/result_NodeName_1fc3610.pklz"
+            "report": "/tmp/tmpstqycw9k/MyWorkflow/_sub_id_01/NodeName_1fc3610/_report/report.rst",
+            "result": "/tmp/tmpstqycw9k/MyWorkflow/_sub_id_01/NodeName_1fc3610/result_NodeName_1fc3610.pklz"
         },
         {
             "group": 1,
-            "name": "1_freesurfer_recon_all",
-            "report": "/tmp/tmphu15h7js/MyWorkflow/_sub_id_01/_subject_id_sub-01/freesurfer_recon_all/_report/report.rst",
-            "result": "/tmp/tmphu15h7js/MyWorkflow/_sub_id_01/_subject_id_sub-01/freesurfer_recon_all/result_freesurfer_recon_all.pklz"
+            "name": "1_hcppaths",
+            "report": "/tmp/tmpwi_l78d2/MyWorkflow/_sub_id_01/_subject_id_01/hcppaths/_report/report.rst",
+            "result": "/tmp/tmpwi_l78d2/MyWorkflow/_sub_id_01/_subject_id_01/hcppaths/result_hcppaths.pklz"
         }
     ]
 }
