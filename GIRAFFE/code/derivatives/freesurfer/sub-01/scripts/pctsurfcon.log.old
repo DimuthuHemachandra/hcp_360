@@ -1,0 +1,9 @@
+Logfile for pctsurfcon
+Tue Dec  3 18:47:01 EST 2019
+setenv SUBJECTS_DIR /Users/dimuthu/Documents/Robarts/apps/hcp_360/GIRAFFE/code/derivatives/freesurfer
+cd /Users/dimuthu/Documents/Robarts/apps/hcp_360/GIRAFFE/code/derivatives/freesurfer/sub-01/scripts
+/Applications/freesurfer/bin/pctsurfcon
+$Id: FreeSurferEnv.csh,v 1.89 2016/06/09 14:54:31 zkaufman Exp $
+Darwin Dimuthus-MacBook-Pro.local 17.3.0 Darwin Kernel Version 17.3.0: Thu Nov  9 18:09:22 PST 2017; root:xnu-4570.31.3~1/RELEASE_X86_64 x86_64
+FREESURFER_HOME /Applications/freesurfer
+Cleaning up

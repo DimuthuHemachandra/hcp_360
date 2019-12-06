@@ -2,15 +2,21 @@
     {
         "group": 1,
         "imports": [],
-        "name": "0_NodeName_1fc3610",
+        "name": "0_hcppaths",
         "size": 1
     },
     {
-        "group": 1,
+        "group": 2,
+        "imports": [],
+        "name": "1_SelectFiles",
+        "size": 1
+    },
+    {
+        "group": 2,
         "imports": [
-            "0_NodeName_1fc3610"
+            "1_SelectFiles"
         ],
-        "name": "1_hcppaths",
+        "name": "2_freesurfer_recon_all",
         "size": 1
     }
 ]

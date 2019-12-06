@@ -1,0 +1,13 @@
+------------------------------
+SUBJECT sub-01
+START_TIME Tue Dec 3 10:34:40 EST 2019
+END_TIME Tue Dec 3 19:19:24 EST 2019
+RUNTIME_HOURS 8.746
+USER dimuthu
+HOST Dimuthus-MacBook-Pro.local
+PROCESSOR x86_64
+OS Darwin
+UNAME Darwin Dimuthus-MacBook-Pro.local 17.3.0 Darwin Kernel Version 17.3.0: Thu Nov  9 18:09:22 PST 2017; root:xnu-4570.31.3~1/RELEASE_X86_64 x86_64
+VERSION $Id: FreeSurferEnv.csh,v 1.89 2016/06/09 14:54:31 zkaufman Exp $
+CMDPATH /Applications/freesurfer/bin/recon-all
+CMDARGS -all -i /Users/dimuthu/Documents/Robarts/apps/hcp_360/GIRAFFE/code/bids/sub-01/anat/sub-01_T1w.nii.gz -subjid sub-01 -sd /Users/dimuthu/Documents/Robarts/apps/hcp_360/GIRAFFE/code/derivatives/freesurfer
