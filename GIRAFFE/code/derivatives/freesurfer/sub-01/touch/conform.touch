@@ -1,1 +1,0 @@
-mri_convert /Users/dimuthu/Documents/Robarts/apps/hcp_360/GIRAFFE/code/derivatives/freesurfer/sub-01/mri/rawavg.mgz /Users/dimuthu/Documents/Robarts/apps/hcp_360/GIRAFFE/code/derivatives/freesurfer/sub-01/mri/orig.mgz --conform

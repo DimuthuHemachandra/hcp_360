@@ -1,1 +1,0 @@
-mris_inflate -rusage /Users/dimuthu/Documents/Robarts/apps/hcp_360/GIRAFFE/code/derivatives/freesurfer/sub-01/touch/rusage.mris_inflate.rh.dat ../surf/rh.smoothwm ../surf/rh.inflated
