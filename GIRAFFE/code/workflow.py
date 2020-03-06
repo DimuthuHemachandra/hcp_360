@@ -1,5 +1,6 @@
-#This is a Nipype generator. Warning, here be dragons.
 #!/usr/bin/env python
+#This is a Nipype generator. Warning, here be dragons.
+
 
 import os
 import sys
@@ -55,6 +56,8 @@ else:
 
 fs_folder = opj(out_dir, 'freesurfer')  # location of freesurfer folder
 os.system('mkdir -p %s'%fs_folder)
+
+#os.system('/neurodocker/startup.sh')
 
 copy("create_subj_volume_parcellation.sh",fs_folder)
 copy("lh.HCP-MMP1.annot",fs_folder)
@@ -165,8 +168,9 @@ analysisflow.connect(hcppaths, "txtfilename", parcel, "input_file")
 
 #analysisflow.connect(freesurfer_recon_all, "out_dir", io_data_sink, "recon_results")
 
-#Run the workflow
-plugin = 'MultiProc' #adjust your desired plugin here
-plugin_args = {'n_procs': 8} #adjust to your number of cores
-#analysisflow.write_graph(graph2use='flat', format='png', simple_form=False)
-analysisflow.run(plugin=plugin, plugin_args=plugin_args)
+if __name__ == "__main__":
+    #Run the workflow
+    plugin = 'MultiProc' #adjust your desired plugin here
+    plugin_args = {'n_procs': 8} #adjust to your number of cores
+    #analysisflow.write_graph(graph2use='flat', format='png', simple_form=False)
+    analysisflow.run(plugin=plugin, plugin_args=plugin_args)
