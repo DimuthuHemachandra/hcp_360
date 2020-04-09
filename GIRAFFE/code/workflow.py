@@ -9,7 +9,8 @@ import nipype.pipeline as pe
 from nipype import Workflow
 import argparse
 from os.path import join as opj
-from shutil import copy
+from shutil import copy, copytree
+from distutils.dir_util import copy_tree
 
 import parcellation as parce
 
@@ -62,6 +63,8 @@ os.system('mkdir -p %s'%fs_folder)
 copy("create_subj_volume_parcellation.sh",fs_folder)
 copy("lh.HCP-MMP1.annot",fs_folder)
 copy("rh.HCP-MMP1.annot",fs_folder)
+#os.system('yes | cp -rf fsaverage '+fs_folder)
+#copy_tree("fsaverage",fs_folder+'/fsaverage')
 
 #Basic interface class generates identity mappings
 Parameters = pe.Node(utility.IdentityInterface(fields=["sub_id"]), name='Parameters', iterfield = ['subj_id'])
@@ -109,19 +112,20 @@ def get_paths(subject_id, out_dir, recon_results):
     from shutil import copy
 
     out_dir = out_dir+"/freesurfer"
-    if os.path.exists(out_dir+"/fsaverage"):
+    """if os.path.exists(out_dir+"/fsaverage/"):
     	print("fsaverage already exists")
     else:
     	print("copying fsaverage from freesurfer")
-    	os.system('cp $SUBJECTS_DIR/fsaverage '+out_dir)
+    	os.system('cp -R $SUBJECTS_DIR/fsaverage '+out_dir)
 
     if not os.path.exists(out_dir+"/create_subj_volume_parcellation.sh"):
     	print("current wd is ***************",os.getcwd())
     	#copy("/home/ylu/Desktop/sub-CT01/derivatives/freesurfer15/freesurfer/derivatives/work/create_subj_volume_parcellation.sh",out_dir)
-      	#copy("/Users/dimuthu/Documents/Robarts/apps/hcp_360/GIRAFFE/code/derivatives/work/create_subj_volume_parcellation.sh",out_dir) 
+      	#copy("/Users/dimuthu/Documents/Robarts/apps/hcp_360/GIRAFFE/code/derivatives/work/create_subj_volume_parcellation.sh",out_dir) """
     
     #copy(out_dir+'/'+subject,out_dir)
     #subject = "sub-"+subject_id
+    #os.system('yes | cp -rf /opt/freesurfer/subjects/fsaverage '+out_dir)
     subject = subject_id
 
     file_name = out_dir+'/'+subject+'.txt'

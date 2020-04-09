@@ -79,6 +79,9 @@ get_anatomical_stats=YES
 create_aseg_files=NO
 fs_sub_dir=$k
 
+#Added by me
+cp -rf /opt/freesurfer/subjects/fsaverage $fs_sub_dir
+
 if [ ! -z "${f}" ] ; then first=$f; else first=1; fi
 if [ ! -z "${l}" ] ; then last=$l; else last=`wc -l < ${subject_list_all}`; fi
 if [ ! -z "${m}" ] ; then create_individual_masks=$m; fi

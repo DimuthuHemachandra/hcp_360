@@ -25,7 +25,9 @@ RUN export ND_ENTRYPOINT="/neurodocker/startup.sh" \
            curl \
            locales \
            unzip \
-		nano \
+	   nano \
+ 	   time \
+	   procps \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
@@ -36,12 +38,12 @@ RUN export ND_ENTRYPOINT="/neurodocker/startup.sh" \
     && if [ ! -f "$ND_ENTRYPOINT" ]; then \
          echo '#!/usr/bin/env bash' >> "$ND_ENTRYPOINT" \
     &&   echo 'set -e' >> "$ND_ENTRYPOINT" \
-    &&   echo 'export USER="${USER:=`whoami`}"' >> "$ND_ENTRYPOINT" \
-    &&   echo 'if [ -n "$1" ]; then "$@"; else /usr/bin/env bash; fi' >> "$ND_ENTRYPOINT"; \
-    fi \
-    && chmod -R 777 /neurodocker && chmod a+s /neurodocker
+    &&   echo 'export USER="${USER:=`whoami`}"' >> "$ND_ENTRYPOINT"; \
+	fi \
+    && chmod -R 777 /neurodocker && chmod a+s /neurodocker 
+	
 
-#ENTRYPOINT ["/neurodocker/startup.sh"]
+ENTRYPOINT ["/neurodocker/startup.sh"]
 
 #--------------------------
 # Install FreeSurfer v6.0.0
@@ -123,7 +125,13 @@ RUN export PATH="/opt/miniconda-latest/bin:$PATH" \
 
 #RUN sed -i '$ichmod +x /code/workflow.py' $ND_ENTRYPOINT
 
-#RUN sed -i '$ipython ./workflow.py' $ND_ENTRYPOINT
+RUN sed -i '$ipushd /code' $ND_ENTRYPOINT
+
+RUN sed -i '$ipython ./workflow.py "$@"' $ND_ENTRYPOINT
+
+RUN sed -i '$ipopd' $ND_ENTRYPOINT
+
+RUN echo 'if [ -n "$1" ]; then "$@"; else /usr/bin/env bash; fi' >> "$ND_ENTRYPOINT"
 
 RUN echo '{ \
     \n  "pkg_manager": "apt", \
@@ -171,13 +179,15 @@ RUN echo '{ \
 # Add custom analysis file as CMD
 #--------------------------------
 RUN mkdir /code
+RUN mkdir /code/fsaverage
 WORKDIR /code
 
 COPY * /code/
+COPY fsaverage /code/fsaverage
 #COPY workflow.py /code/
 
 
-RUN chmod +x /code/workflow.py
+RUN chmod 777 /code/workflow.py
 
 #WORKDIR /code
 #ENTRYPOINT ["python","workflow.py"]
@@ -193,8 +203,8 @@ RUN chmod +x /code/workflow.py
 #ADD workflow.py /workflow.py
 #ENTRYPOINT ["/workflow.py"]
 
-RUN chmod +x /code/run.sh
-ENTRYPOINT ["./run.sh"]
+#RUN chmod +x /code/run.sh
+#ENTRYPOINT ["./run.sh"]
 
 
 
